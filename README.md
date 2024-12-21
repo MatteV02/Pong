@@ -1,10 +1,10 @@
 # Pong
 
-The software in this repository is a multithreaded version of the well-known game **Pong**.
+The software in this repository is a multithreaded version of the well-known game **Pong**.  
 The game is multiplayer so play it with a friend!
 
 # System requirements
-The software runs on Linux-based systems, no heavy requirements for CPU / memory / available space needed.
+The software runs only on Linux-based systems, it has no heavy requirements for CPU / memory / available space.
 
 # Execute
 Download the latest release from [Releases](https://github.com/MatteV02/Pong/releases/) then run it from terminal like this `~/<path-to-executable>/Pong`.
