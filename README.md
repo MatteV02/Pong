@@ -15,7 +15,7 @@ Maximize the terminal window to visualize the game correctly.
 ```bash
 sudo apt-get install libncurses5-dev libncursesw5-dev
 ```
-2. Run in the project's folder
+2. Run in the project's folder this command
 ```bash
 make release
 ```
