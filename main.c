@@ -8,9 +8,15 @@
 #include "ScreenElements.h"
 #include "ThreadPool.h"
 
+/**
+ * @brief Main function
+ * @return 0 on exit success
+ */
 int main() {
+
+  // Initializing the environment
   srand(time(NULL));
-  tpool = createTPool(4);
+  tpool = createTPool(2);
   initscr();
   start_color();
   init_pair(1, COLOR_CYAN, COLOR_BLACK);
@@ -29,6 +35,8 @@ int main() {
   ball.y = scr.y / 2;
   ball.movhor = false;
   ball.movver = false;
+  
+  // home screen
   mvprintw(1, 0,
            "\t              _____                   _______                   "
            "_____                    _____          \n"
@@ -98,18 +106,18 @@ int main() {
   int ch = getch();
 
   if (ch != 0x1b) {
+    // start game
+
     erase();
 
+    // first print of the screen objects
     addWorkTPool(tpool, updateBall, NULL);
-
     addWorkTPool(tpool, updateBar, &leftBar);
-
     addWorkTPool(tpool, updateBar, &rightBar);
-
     addWorkTPool(tpool, updateBackground, NULL);
-
     waitTPool(tpool);
 
+    // starting the permanent threads
     pthread_t ballMovementThread;
     pthread_create(&ballMovementThread, NULL, ballMovement, NULL);
 
